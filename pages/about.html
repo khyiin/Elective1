@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | My Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/about.css">
+</head>
+<body class="portfolio-page">
+
+  <nav class="portfolio-nav">
+    <img src="../images/logo%20(2).png" alt="Logo" class="nav-logo-img">
+    <ul class="portfolio-nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="lets-talk-btn">Let's Talk</a>
+  </nav>
+
+  <section class="page-section page-about">
+
+    
+    <input type="radio" name="about-tabs" id="tab-projects" class="tab-radio" checked>
+    <input type="radio" name="about-tabs" id="tab-skills" class="tab-radio">
+    <input type="radio" name="about-tabs" id="tab-hobbies" class="tab-radio">
+
+    <div class="about-content">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">Explore my work, skills, and interests</p>
+
+      <div class="tab-buttons">
+        <label for="tab-projects" class="tab-label">Projects</label>
+        <label for="tab-skills" class="tab-label">Skills</label>
+        <label for="tab-hobbies" class="tab-label">Hobbies</label>
+      </div>
+
+      <div class="tab-content">
+
+        <div class="tab-panel" id="panel-projects">
+          <div class="cards-grid">
+            <div class="card transparent-card">
+              <h3 class="card-title">E-Commerce Platform</h3>
+              <p class="card-text">
+                A full-featured online shopping platform with cart management,
+                secure payment gateway integration, and admin dashboard.
+              </p>
+              <span class="card-tag">Web App</span>
+            </div>
+            <div class="card transparent-card">
+              <h3 class="card-title">Portfolio Website</h3>
+              <p class="card-text">
+                Modern responsive portfolio showcasing creative work with
+                animations, dark mode, and smooth scroll effects.
+              </p>
+              <span class="card-tag">UI/UX Design</span>
+            </div>
+            <div class="card transparent-card">
+              <h3 class="card-title">Task Manager</h3>
+              <p class="card-text">
+                Productivity app with drag-and-drop boards, team collaboration,
+                real-time notifications, and progress tracking.
+              </p>
+              <span class="card-tag">SaaS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-skills">
+          <div class="cards-grid">
+            <div class="card transparent-card">
+              <h3 class="card-title">Frontend Development</h3>
+              <p class="card-text">
+                HTML5, CSS3, JavaScript, React, Vue.js — building responsive,
+                accessible, and high-performance user interfaces.
+              </p>
+              <span class="card-tag">Expert</span>
+            </div>
+            <div class="card transparent-card">
+              <h3 class="card-title">UI / UX Design</h3>
+              <p class="card-text">
+                Figma, Adobe XD, wireframing, prototyping, user research,
+                design systems, and pixel-perfect visual design.
+              </p>
+              <span class="card-tag">Advanced</span>
+            </div>
+            <div class="card transparent-card">
+              <h3 class="card-title">Backend & Database</h3>
+              <p class="card-text">
+                Node.js, Express, Python, PostgreSQL, MongoDB — designing
+                robust APIs and scalable database architectures.
+              </p>
+              <span class="card-tag">Intermediate</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-hobbies">
+          <div class="cards-grid">
+            <div class="card transparent-card">
+              <h3 class="card-title">Photography</h3>
+              <p class="card-text">
+                Capturing moments through the lens — landscapes, street
+                photography, and portraits with a keen eye for composition.
+              </p>
+              <span class="card-tag">Creative</span>
+            </div>
+            <div class="card transparent-card">
+              <h3 class="card-title">Reading & Writing</h3>
+              <p class="card-text">
+                Diving into tech blogs, design books, and occasionally writing
+                articles about web development trends and best practices.
+              </p>
+              <span class="card-tag">Mindful</span>
+            </div>
+            <div class="card transparent-card">
+              <h3 class="card-title">Music & Travel</h3>
+              <p class="card-text">
+                Exploring new places, cultures, and cuisines — always with a
+                playlist on hand for inspiration and relaxation.
+              </p>
+              <span class="card-tag">Adventure</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
