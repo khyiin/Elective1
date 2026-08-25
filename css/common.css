@@ -27,6 +27,7 @@
 
 html {
   scroll-behavior: smooth;
+  min-height: 100%;
 }
 
 body {
@@ -43,7 +44,21 @@ body.portfolio-page {
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
-  background: var(--dark-blue);
+  background-image: url('../images/BGREAL.png');
+  background-size: 100% auto;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  position: relative;
+}
+
+body.portfolio-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* ===== Portfolio Navbar ===== */
@@ -57,8 +72,8 @@ body.portfolio-page {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(180deg, rgba(10, 31, 68, 0.85) 0%, rgba(10, 31, 68, 0) 100%);
-  backdrop-filter: blur(8px);
+  background: transparent;
+  backdrop-filter: none;
 }
 
 .nav-logo-img {
@@ -67,52 +82,69 @@ body.portfolio-page {
   height: 68px;
   max-height: 68px;
   object-fit: contain;
-  border-radius: 14px;
-  background: var(--white-08);
-  border: 1.5px solid var(--white-15);
-  padding: 6px 10px;
-  backdrop-filter: blur(8px);
 }
 
 .portfolio-nav-links {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: var(--white-08);
-  border: 1px solid var(--white-12);
-  border-radius: 18px;
-  backdrop-filter: blur(12px);
+  gap: 32px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  backdrop-filter: none;
 }
 
 .portfolio-nav-links a {
   display: block;
-  padding: 8px 20px;
-  border-radius: 12px;
+  padding: 8px 4px;
+  border-radius: 0;
   color: var(--white-75);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
   transition: all 0.25s ease;
+  background: transparent;
+  position: relative;
+}
+
+.portfolio-nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--white);
+  transition: width 0.25s ease;
 }
 
 .portfolio-nav-links a:hover {
   color: var(--white);
-  background: var(--white-08);
+  background: transparent;
+}
+
+.portfolio-nav-links a:hover::after {
+  width: 100%;
 }
 
 
 .portfolio-nav-links a.active {
-  background: var(--white-12);
+  background: transparent;
   color: var(--white);
   font-weight: 600;
+}
+
+.portfolio-nav-links a.active::after {
+  width: 100%;
 }
 
 
 body:has(#about:target) .nav-link-about,
 body:has(#contact:target) .nav-link-contact {
-  background: var(--white-12);
+  background: transparent;
   color: var(--white);
   font-weight: 600;
 }
@@ -129,20 +161,7 @@ body:has(#contact:target) .nav-link-about {
 }
 
 .lets-talk-btn {
-  padding: 10px 22px;
-  border-radius: 12px;
-  background: var(--white-12);
-  border: 1.5px solid var(--white-20);
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.25s ease;
-}
-
-.lets-talk-btn:hover {
-  background: var(--white);
-  color: var(--dark-blue);
+  display: none !important;
 }
 
 
@@ -212,6 +231,43 @@ body:has(#contact:target) .nav-link-about {
   letter-spacing: 0.3px;
 }
 
+.card-icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 18px;
+  color: var(--white-75);
+  display: block;
+}
+
+.repo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--dark-blue);
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.repo-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.repo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  background: var(--white-90);
+}
+
 
 @media (max-width: 1024px) {
   .portfolio-nav { padding: 16px 28px; }
@@ -221,8 +277,8 @@ body:has(#contact:target) .nav-link-about {
 @media (max-width: 768px) {
   .portfolio-nav { padding: 14px 20px; }
   .nav-logo-img { height: 52px; max-height: 52px; }
-  .portfolio-nav-links { padding: 7px 12px; gap: 4px; }
-  .portfolio-nav-links a { padding: 6px 14px; font-size: 0.85rem; }
+  .portfolio-nav-links { padding: 0; gap: 16px; }
+  .portfolio-nav-links a { padding: 6px 2px; font-size: 0.85rem; }
   .lets-talk-btn { display: none; }
   .page-section { padding: 100px 20px 60px; }
 }

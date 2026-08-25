@@ -1,17 +1,10 @@
 
 .page-home {
-  background-image: url('../images/bg1%20(1).jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: transparent;
 }
 
 .page-home::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(10, 31, 68, 0.78) 0%, rgba(10, 31, 68, 0.55) 50%, rgba(10, 31, 68, 0.85) 100%);
-  pointer-events: none;
+  content: none;
 }
 
 .home-container {
